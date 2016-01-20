@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NgTradeOnline.Web", "NgTradeOnline.Web\NgTradeOnline.Web.xproj", "{050CC9F9-159D-4F5D-A8EC-EE8924EC09FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Api", "NgTradeOnline.Api\NgTradeOnline.Api.csproj", "{176D5276-4B47-4EC5-8072-EEB4390EBBE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Core", "NgTradeOnline.Core\NgTradeOnline.Core.csproj", "{EAF0A76F-20A8-4778-A8C5-AC32640F60AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Data", "NgTradeOnline.Data\NgTradeOnline.Data.csproj", "{2F257F42-4963-468B-BE34-600C6DEF6031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Data.CommandService", "NgTradeOnline.Data.CommandService\NgTradeOnline.Data.CommandService.csproj", "{EE22078B-C979-4D4B-A93B-997B7B94B231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Data.Core", "NgTradeOnline.Data.Core\NgTradeOnline.Data.Core.csproj", "{DCACB571-8D20-43FA-A3E9-1DC9E9A9AC99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Data.QueryService", "NgTradeOnline.Data.QueryService\NgTradeOnline.Data.QueryService.csproj", "{82C085BE-14A5-4394-A17E-9E652E4A72AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Models", "NgTradeOnline.Models\NgTradeOnline.Models.csproj", "{D139B9E7-F9C4-4F63-8250-6B4129731DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgTradeOnline.Cache", "NgTradeOnline.Cache\NgTradeOnline.Cache.csproj", "{F9361F62-EBE7-4543-989B-656B16921C2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{050CC9F9-159D-4F5D-A8EC-EE8924EC09FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050CC9F9-159D-4F5D-A8EC-EE8924EC09FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050CC9F9-159D-4F5D-A8EC-EE8924EC09FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050CC9F9-159D-4F5D-A8EC-EE8924EC09FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176D5276-4B47-4EC5-8072-EEB4390EBBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176D5276-4B47-4EC5-8072-EEB4390EBBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176D5276-4B47-4EC5-8072-EEB4390EBBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176D5276-4B47-4EC5-8072-EEB4390EBBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF0A76F-20A8-4778-A8C5-AC32640F60AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF0A76F-20A8-4778-A8C5-AC32640F60AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF0A76F-20A8-4778-A8C5-AC32640F60AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF0A76F-20A8-4778-A8C5-AC32640F60AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F257F42-4963-468B-BE34-600C6DEF6031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F257F42-4963-468B-BE34-600C6DEF6031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F257F42-4963-468B-BE34-600C6DEF6031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F257F42-4963-468B-BE34-600C6DEF6031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE22078B-C979-4D4B-A93B-997B7B94B231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE22078B-C979-4D4B-A93B-997B7B94B231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE22078B-C979-4D4B-A93B-997B7B94B231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE22078B-C979-4D4B-A93B-997B7B94B231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCACB571-8D20-43FA-A3E9-1DC9E9A9AC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCACB571-8D20-43FA-A3E9-1DC9E9A9AC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCACB571-8D20-43FA-A3E9-1DC9E9A9AC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCACB571-8D20-43FA-A3E9-1DC9E9A9AC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C085BE-14A5-4394-A17E-9E652E4A72AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C085BE-14A5-4394-A17E-9E652E4A72AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C085BE-14A5-4394-A17E-9E652E4A72AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C085BE-14A5-4394-A17E-9E652E4A72AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D139B9E7-F9C4-4F63-8250-6B4129731DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D139B9E7-F9C4-4F63-8250-6B4129731DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D139B9E7-F9C4-4F63-8250-6B4129731DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D139B9E7-F9C4-4F63-8250-6B4129731DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9361F62-EBE7-4543-989B-656B16921C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9361F62-EBE7-4543-989B-656B16921C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9361F62-EBE7-4543-989B-656B16921C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9361F62-EBE7-4543-989B-656B16921C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
