@@ -2,6 +2,7 @@
 using NgTradeOnline.Core;
 using NgTradeOnline.Data.Core.Query;
 using NgTradeOnline.Data.Core.QueryResult.Contest;
+using NgTradeOnline.Data.QueryService;
 using NgTradeOnline.Models.Output;
 using System.Threading.Tasks;
 

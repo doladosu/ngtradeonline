@@ -2,8 +2,10 @@
 using NgTradeOnline.Core;
 using NgTradeOnline.Data.Core.Query;
 using NgTradeOnline.Data.Core.QueryResult.Contest;
+using NgTradeOnline.Data.QueryService;
 using NgTradeOnline.Models.Output;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NgTradeOnline.Data.Core.QueryHandler.Contest

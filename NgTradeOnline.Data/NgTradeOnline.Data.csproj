@@ -99,6 +99,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NgTradeOnline.Cache\NgTradeOnline.Cache.csproj">
+      <Project>{f9361f62-ebe7-4543-989b-656b16921c2a}</Project>
+      <Name>NgTradeOnline.Cache</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

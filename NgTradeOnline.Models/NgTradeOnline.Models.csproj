@@ -53,6 +53,8 @@
     <Compile Include="Input\ContestEntry.cs" />
     <Compile Include="Input\Player.cs" />
     <Compile Include="Output\Contests.cs" />
+    <Compile Include="Output\Holding.cs" />
+    <Compile Include="Output\Quote.cs" />
     <Compile Include="Output\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FanSelector.Data;
+using NgTradeOnline.Models.Output;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FanSelector.Models.Output;
 
-namespace FanSelector.Data.QueryService.Impl
+namespace NgTradeOnline.Data.QueryService.Impl
 {
     public class ListQueryRepository : BaseRepository, IListQueryRepository
     {

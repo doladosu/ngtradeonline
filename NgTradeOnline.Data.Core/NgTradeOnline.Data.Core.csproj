@@ -65,6 +65,14 @@
       <Project>{eaf0a76f-20a8-4778-a8c5-ac32640f60ae}</Project>
       <Name>NgTradeOnline.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NgTradeOnline.Data.CommandService\NgTradeOnline.Data.CommandService.csproj">
+      <Project>{ee22078b-c979-4d4b-a93b-997b7b94b231}</Project>
+      <Name>NgTradeOnline.Data.CommandService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NgTradeOnline.Data.QueryService\NgTradeOnline.Data.QueryService.csproj">
+      <Project>{82c085be-14a5-4394-a17e-9e652e4a72af}</Project>
+      <Name>NgTradeOnline.Data.QueryService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NgTradeOnline.Models\NgTradeOnline.Models.csproj">
       <Project>{d139b9e7-f9c4-4f63-8250-6b4129731dbc}</Project>
       <Name>NgTradeOnline.Models</Name>

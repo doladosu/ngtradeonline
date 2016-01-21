@@ -41,12 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IContestQueryRepository.cs" />
+    <Compile Include="IHoldingQueryRepository.cs" />
     <Compile Include="IListQueryRepository.cs" />
     <Compile Include="Impl\ContestQueryRepository.cs" />
+    <Compile Include="Impl\HoldingQueryRepository.cs" />
     <Compile Include="Impl\ListQueryRepository.cs" />
+    <Compile Include="Impl\QuoteQueryRepository.cs" />
+    <Compile Include="IQuoteQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NgTradeOnline.Cache\NgTradeOnline.Cache.csproj">
+      <Project>{f9361f62-ebe7-4543-989b-656b16921c2a}</Project>
+      <Name>NgTradeOnline.Cache</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NgTradeOnline.Core\NgTradeOnline.Core.csproj">
       <Project>{eaf0a76f-20a8-4778-a8c5-ac32640f60ae}</Project>
       <Name>NgTradeOnline.Core</Name>

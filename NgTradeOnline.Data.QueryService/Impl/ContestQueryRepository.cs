@@ -1,5 +1,4 @@
-﻿using FanSelector.Data;
-using NgTradeOnline.Models.Db;
+﻿using NgTradeOnline.Models.Db;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,7 +12,7 @@ namespace NgTradeOnline.Data.QueryService.Impl
         {
             var contests = await RedisRepository.Get<IEnumerable<Contest>>(ContestsKey);
             if (contests != null) return contests;
-            contests = await Db.Contests.ToListAsync();
+            //contests = await Db.Contests.ToListAsync();
             await RedisRepository.Add(ContestsKey, contests);
             return contests;
         }
@@ -22,7 +21,7 @@ namespace NgTradeOnline.Data.QueryService.Impl
         {
             var contest = await RedisRepository.Get<Contest>(ContestsKey + id);
             if (contest != null) return contest;
-            contest = await Db.Contests.Where(c => c.Id == id).FirstOrDefaultAsync();
+           // contest = await Db.Contests.Where(c => c.Id == id).FirstOrDefaultAsync();
             await RedisRepository.Add(ContestsKey + id, contest);
             return contest;
         }

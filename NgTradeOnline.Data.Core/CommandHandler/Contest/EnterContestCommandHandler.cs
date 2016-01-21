@@ -1,5 +1,6 @@
-﻿using FanSelector.Data.Core.Command.Contest;
-using NgTradeOnline.Core;
+﻿using NgTradeOnline.Core;
+using NgTradeOnline.Data.CommandService;
+using NgTradeOnline.Data.Core.Command.Contest;
 using System.Linq;
 using System.Threading.Tasks;
 

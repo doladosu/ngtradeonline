@@ -1,8 +1,8 @@
-﻿using FanSelector.Core;
-using FanSelector.Models.Input;
-using FluentValidation;
+﻿using FluentValidation;
+using NgTradeOnline.Core;
+using NgTradeOnline.Models.Input;
 
-namespace FanSelector.Data.Core.Command.Contest
+namespace NgTradeOnline.Data.Core.Command.Contest
 {
     public class EnterContestCommand : ICommand
     {

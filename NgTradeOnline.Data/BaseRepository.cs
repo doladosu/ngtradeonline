@@ -1,10 +1,12 @@
-﻿using System;
+﻿using NgTradeOnline.Cache;
+using NgTradeOnline.Cache.Impl;
+using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FanSelector.Data
+namespace NgTradeOnline.Data
 {
     public class BaseRepository
     {

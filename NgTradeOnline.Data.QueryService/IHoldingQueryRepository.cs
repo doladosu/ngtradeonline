@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace NgTradeOnline.Data.QueryService
 {
-    public interface IListQueryRepository : IRepository
+    public interface IHoldingQueryRepository : IRepository
     {
-        Task<IEnumerable<State>> GetAllStates();
+        Task<IEnumerable<Holding>> GetHoldings(string userId);
     }
 }

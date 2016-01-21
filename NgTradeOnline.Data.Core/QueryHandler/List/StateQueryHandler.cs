@@ -1,6 +1,7 @@
 ﻿using NgTradeOnline.Core;
 using NgTradeOnline.Data.Core.Query;
 using NgTradeOnline.Data.Core.QueryResult.List;
+using NgTradeOnline.Data.QueryService;
 using System.Threading.Tasks;
 
 namespace NgTradeOnline.Data.Core.QueryHandler.List

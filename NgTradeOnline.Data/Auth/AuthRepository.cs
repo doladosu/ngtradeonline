@@ -1,19 +1,20 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using FanSelector.Data.Auth;
+using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace FanSelector.Data.Auth
+namespace NgTradeOnline.Data.Auth
 {
     public class AuthRepository : IDisposable
     {
-        private readonly FsDataContext _db;
+        private readonly NgoDataContext _db;
         private readonly ApplicationUserManager _userManager;
 
         public AuthRepository()
         {
-            _db = new FsDataContext();
+            _db = new NgoDataContext();
             _userManager = GetUserManager();
         }
 
