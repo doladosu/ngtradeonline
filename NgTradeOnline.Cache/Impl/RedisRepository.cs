@@ -42,12 +42,6 @@ namespace NgTradeOnline.Cache.Impl
         public async Task<bool> Exists(string key)
         {
             return await _cache.KeyExistsAsync(key);
-
-
-
-
-
-
         }
     }
 }
