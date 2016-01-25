@@ -81,6 +81,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,6 +96,7 @@
     <Compile Include="Auth\ApplicationUserManager.cs" />
     <Compile Include="Auth\AuthRepository.cs" />
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Data\NgoDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +107,10 @@
     <ProjectReference Include="..\NgTradeOnline.Cache\NgTradeOnline.Cache.csproj">
       <Project>{f9361f62-ebe7-4543-989b-656b16921c2a}</Project>
       <Name>NgTradeOnline.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NgTradeOnline.Models\NgTradeOnline.Models.csproj">
+      <Project>{d139b9e7-f9c4-4f63-8250-6b4129731dbc}</Project>
+      <Name>NgTradeOnline.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

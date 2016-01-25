@@ -41,14 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Db\AccountProfile.cs" />
     <Compile Include="Db\ApplicationType.cs" />
     <Compile Include="Db\AspNetRole.cs" />
     <Compile Include="Db\AspNetUser.cs" />
     <Compile Include="Db\AspNetUserClaim.cs" />
     <Compile Include="Db\AspNetUserLogin.cs" />
     <Compile Include="Db\Client.cs" />
+    <Compile Include="Db\Companyprofile.cs" />
     <Compile Include="Db\Contest.cs" />
+    <Compile Include="Db\dailypricelist.cs" />
+    <Compile Include="Db\Holding.cs" />
+    <Compile Include="Db\MailingList.cs" />
+    <Compile Include="Db\News.cs" />
+    <Compile Include="Db\Order.cs" />
+    <Compile Include="Db\Quote.cs" />
     <Compile Include="Db\RefreshToken.cs" />
+    <Compile Include="Db\UserProfile.cs" />
+    <Compile Include="Db\webpages_Membership.cs" />
+    <Compile Include="Db\webpages_OAuthMembership.cs" />
+    <Compile Include="Db\webpages_Roles.cs" />
     <Compile Include="Enum\ApplicationTypes.cs" />
     <Compile Include="Input\ContestEntry.cs" />
     <Compile Include="Input\Player.cs" />

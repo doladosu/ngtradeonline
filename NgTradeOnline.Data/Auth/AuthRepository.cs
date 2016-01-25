@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using NgTradeOnline.Data.Data;
+using NgTradeOnline.Models.Db;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
-using FanSelector.Data.Auth;
-using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web;
 
 namespace NgTradeOnline.Data.Auth
 {
@@ -71,8 +75,15 @@ namespace NgTradeOnline.Data.Auth
             }
 
             _db.RefreshTokens.Add(token);
-
-            return await _db.SaveChangesAsync() > 0;
+            try
+            {
+                return await _db.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
         }
 
         public async Task<bool> RemoveRefreshToken(string refreshTokenId)

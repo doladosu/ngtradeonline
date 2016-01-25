@@ -14,6 +14,7 @@ namespace NgTradeOnline.Api.Controllers
     /// <summary>
     /// 
     /// </summary>
+    [RoutePrefix("api/List")]
     public class ListController : BaseApiController
     {
         /// <summary>

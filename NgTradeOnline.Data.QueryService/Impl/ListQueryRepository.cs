@@ -1,5 +1,4 @@
-﻿using FanSelector.Data;
-using NgTradeOnline.Models.Output;
+﻿using NgTradeOnline.Models.Output;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

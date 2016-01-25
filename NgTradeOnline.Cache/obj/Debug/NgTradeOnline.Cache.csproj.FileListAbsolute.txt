@@ -8,3 +8,13 @@ C:\Users\DOladosu\Documents\Visual Studio 2015\Projects\ngtradeonline\NgTradeOnl
 C:\Users\DOladosu\Documents\Visual Studio 2015\Projects\ngtradeonline\NgTradeOnline\NgTradeOnline.Cache\bin\Debug\Newtonsoft.Json.xml
 C:\Users\DOladosu\Documents\Visual Studio 2015\Projects\ngtradeonline\NgTradeOnline\NgTradeOnline.Cache\bin\Debug\StackExchange.Redis.pdb
 C:\Users\DOladosu\Documents\Visual Studio 2015\Projects\ngtradeonline\NgTradeOnline\NgTradeOnline.Cache\bin\Debug\StackExchange.Redis.xml
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\NgTradeOnline.Cache.dll
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\NgTradeOnline.Cache.pdb
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\Newtonsoft.Json.dll
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\StackExchange.Redis.dll
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\Newtonsoft.Json.xml
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\StackExchange.Redis.pdb
+C:\git\ngtradeonline2\NgTradeOnline.Cache\bin\Debug\StackExchange.Redis.xml
+C:\git\ngtradeonline2\NgTradeOnline.Cache\obj\Debug\NgTradeOnline.Cache.csprojResolveAssemblyReference.cache
+C:\git\ngtradeonline2\NgTradeOnline.Cache\obj\Debug\NgTradeOnline.Cache.dll
+C:\git\ngtradeonline2\NgTradeOnline.Cache\obj\Debug\NgTradeOnline.Cache.pdb

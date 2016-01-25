@@ -1,8 +1,8 @@
-﻿using FanSelector.Data.Auth;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using NgTradeOnline.Data.Data;
 
 namespace NgTradeOnline.Data.Auth
 {

@@ -220,7 +220,6 @@
     <Compile Include="App_Start\AutoMapperConfiguration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -267,9 +266,9 @@
     <Compile Include="Hubs\ContestsHub.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Setup\Core\ApiTimedEvent.cs" />
     <Compile Include="Setup\Core\CustomOkResult.cs" />
@@ -342,7 +341,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +351,10 @@
     <ProjectReference Include="..\NgTradeOnline.Data.Core\NgTradeOnline.Data.Core.csproj">
       <Project>{dcacb571-8d20-43fa-a3e9-1dc9e9a9ac99}</Project>
       <Name>NgTradeOnline.Data.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NgTradeOnline.Data\NgTradeOnline.Data.csproj">
+      <Project>{2f257f42-4963-468b-be34-600c6def6031}</Project>
+      <Name>NgTradeOnline.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\NgTradeOnline.Models\NgTradeOnline.Models.csproj">
       <Project>{d139b9e7-f9c4-4f63-8250-6b4129731dbc}</Project>

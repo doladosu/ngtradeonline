@@ -1,5 +1,6 @@
 ﻿using NgTradeOnline.Cache;
 using NgTradeOnline.Cache.Impl;
+using NgTradeOnline.Data.Data;
 using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
@@ -10,12 +11,12 @@ namespace NgTradeOnline.Data
 {
     public class BaseRepository
     {
-        public readonly FsDataContext Db;
+        public readonly NgoDataContext Db;
         public IRedisRepository RedisRepository;
 
         public BaseRepository()
         {
-            Db = new FsDataContext();
+            Db = new NgoDataContext();
             RedisRepository = new RedisRepository();
         }
 
@@ -25,7 +26,7 @@ namespace NgTradeOnline.Data
             {
                 try
                 {
-                    return await Db.SaveChangesAsync();
+                    // return await Db.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {

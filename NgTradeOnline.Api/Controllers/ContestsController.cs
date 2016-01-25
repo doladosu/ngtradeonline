@@ -17,6 +17,7 @@ namespace NgTradeOnline.Api.Controllers
     /// <summary>
     /// Contests API class
     /// </summary>
+    [RoutePrefix("api/Contests")]
     public class ContestsController : BaseApiControllerHub<ContestsHub>
     {
         /// <summary>

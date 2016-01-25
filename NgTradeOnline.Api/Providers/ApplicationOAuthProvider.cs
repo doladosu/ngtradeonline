@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+﻿using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using NgTradeOnline.Api.Models;
+using NgTradeOnline.Data.Auth;
+using NgTradeOnline.Models.Db;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NgTradeOnline.Api.Providers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="publicClientId"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public ApplicationOAuthProvider(string publicClientId)
         {
             if (publicClientId == null)
@@ -27,11 +32,16 @@ namespace NgTradeOnline.Api.Providers
             _publicClientId = publicClientId;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            var user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {
@@ -39,17 +49,22 @@ namespace NgTradeOnline.Api.Providers
                 return;
             }
 
-            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
+            var oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
                OAuthDefaults.AuthenticationType);
-            ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
+            var cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+            var properties = CreateProperties(user.UserName, context);
+            var ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
             foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
@@ -60,17 +75,78 @@ namespace NgTradeOnline.Api.Providers
             return Task.FromResult<object>(null);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            // Resource owner password credentials does not provide a client ID.
-            if (context.ClientId == null)
+            string clientId;
+            string clientSecret;
+            Client client;
+
+            if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
             {
-                context.Validated();
+                context.TryGetFormCredentials(out clientId, out clientSecret);
             }
 
+            if (context.ClientId == null)
+            {
+                //Remove the comments from the below line context.SetError, and invalidate context 
+                //if you want to force sending clientId/secrects once obtain access tokens. 
+                context.Validated();
+                //context.SetError("invalid_clientId", "ClientId should be sent.");
+                return Task.FromResult<object>(null);
+            }
+
+            using (var repo = new AuthRepository())
+            {
+                client = repo.FindClient(context.ClientId);
+            }
+
+            if (client == null)
+            {
+                context.SetError("invalid_clientId",
+                    string.Format("Client '{0}' is not registered in the system.", context.ClientId));
+                return Task.FromResult<object>(null);
+            }
+
+            if (client.ApplicationTypeId == (int)FanSelector.Models.Enum.ApplicationTypes.NativeConfidential)
+            {
+                if (string.IsNullOrWhiteSpace(clientSecret))
+                {
+                    context.SetError("invalid_clientId", "Client secret should be sent.");
+                    return Task.FromResult<object>(null);
+                }
+                else
+                {
+                    if (client.Secret != Helper.GetHash(clientSecret))
+                    {
+                        context.SetError("invalid_clientId", "Client secret is invalid.");
+                        return Task.FromResult<object>(null);
+                    }
+                }
+            }
+
+            if (!client.IsActive.GetValueOrDefault())
+            {
+                context.SetError("invalid_clientId", "Client is inactive.");
+                return Task.FromResult<object>(null);
+            }
+
+            context.OwinContext.Set("as:clientAllowedOrigin", client.AllowedOrigin);
+            context.OwinContext.Set("as:clientRefreshTokenLifeTime", client.RefreshTokenLifeTime.ToString());
+
+            context.Validated();
             return Task.FromResult<object>(null);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
             if (context.ClientId == _publicClientId)
@@ -86,11 +162,22 @@ namespace NgTradeOnline.Api.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public static AuthenticationProperties CreateProperties(string userName, OAuthGrantResourceOwnerCredentialsContext context)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+                {
+                    "as:client_id", context.ClientId ?? string.Empty
+                },
+                {
+                    "userName", userName
+                }
             };
             return new AuthenticationProperties(data);
         }

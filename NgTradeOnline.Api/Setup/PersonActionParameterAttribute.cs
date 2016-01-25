@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using NgTradeOnline.Api.Setup.Core;
+using NgTradeOnline.Data.Auth;
 using System;
 using System.Linq;
 using System.Net.Http;

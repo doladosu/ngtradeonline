@@ -23,7 +23,6 @@ namespace NgTradeOnline.Models.Db
         public bool? IsActive { get; set; }
 
         [Required]
-        [StringLength(250)]
         public string ProtectedTicket { get; set; }
 
         public virtual Client Client { get; set; }
